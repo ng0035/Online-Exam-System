@@ -1,0 +1,172 @@
+--------------------------------------*login.aspx*---------------------------------------------------------------------------------
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage2.master" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .auto-style4 {
+            width: 100%;
+            height: 319px;
+        }
+        .auto-style5 {
+            width: 349px;
+            height: 294px;
+        }
+        .auto-style6 {
+            width: 24%;
+            height: 286px;
+        }
+        .auto-style8 {
+            width: 100%;
+            height: 220px;
+            margin-right: 0px;
+        }
+        .auto-style9 {
+            width: 65%;
+            height: 122px;
+            margin-left: 422px;
+            margin-right: 0px;
+            margin-top: 0px;
+        }
+        .auto-style12 {
+            font-family: Courier New, Courier, monospace;
+            font-size: medium;
+            color: darkslategray;
+            width: 200px;
+        }
+        .auto-style13 {
+            margin-left: 0px;
+        }
+        .auto-style14 {
+            width: 619px;
+        }
+        .auto-style15 {
+            width: 860px;
+            height: 158px;
+            margin-left: 453px;
+        }
+        .auto-style16 {
+            margin-top: 0px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
+        <div style ="background-color:blueviolet; " class="auto-style1">
+            &nbsp;&nbsp;
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Font-Names="Franklin Gothic Medium" Font-Size="XX-Large" ForeColor="#FFCCFF" Text="Online Examination System"></asp:Label>
+        </div>
+        <div style ="background-color:coral; " class="auto-style4">
+            <div id ="navigation" class="auto-style6">
+            <table class="auto-style5">
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="links" NavigateUrl="~/admin.aspx">Admin</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="links" NavigateUrl="~/login.aspx">Online Exam</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink3" runat="server" CssClass="links" NavigateUrl="~/resultaspx.aspx">Result</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink4" runat="server" CssClass="links" NavigateUrl="~/aboutus.aspx">About Us</asp:HyperLink>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <div class="links">
+                <br />
+                <br />
+                
+                <table align="center" class="auto-style9">
+                    <tr>
+                        <td class="auto-style12">Username:</td>
+                        <td class="auto-style14">
+                            <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style13" Height="38px" Width="358px"></asp:TextBox>
+&nbsp;
+                            </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style12">Password:<br />
+                        </td>
+                        <td class="auto-style14">
+                            <asp:TextBox ID="TextBox2" runat="server" Height="38px" TextMode="Password" Width="358px"></asp:TextBox>
+&nbsp;
+                            </td>
+                    </tr>
+                </table>
+                <asp:Button ID="Button1" runat="server" CssClass="btn" Text="Login" OnClick="Button1_Click" />
+                
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+        <div style ="background-color:greenyellow;" class="auto-style8">
+            <br />
+            <div class="auto-style15">
+                (if not registered)
+
+                <asp:ImageButton ID="ImageButton1" runat="server" CssClass="auto-style16" Height="48px" ImageUrl="~/images/reg.png" OnClick="ImageButton1_Click" Width="122px" />
+                <asp:ImageButton ID="ImageButton2" runat="server" Height="115px" ImageUrl="~/images/forgotpass.jpg" OnClick="ImageButton2_Click" Width="132px" />
+                <br />
+            </div>
+        </div>
+        </asp:Content>
+        ---------------------------------------------------------------------------------------------------------------------------
+        ---------------------------------*login.aspx.cs*---------------------------------------------
+            protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("forgotpassword.aspx");
+    }
+
+    protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+    {
+        Response.Redirect("registration.aspx");
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-A4DEU4N\SQLEXPRESS;Initial Catalog=project;Integrated Security=True");
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select * from reg where username =@username and pass=@pass", con);
+        cmd.Parameters.AddWithValue("@username", TextBox1.Text);
+        cmd.Parameters.AddWithValue("@pass", TextBox2.Text);
+
+        SqlDataReader dr = cmd.ExecuteReader();
+        if (dr.HasRows)
+        {
+            if (dr.Read())
+            {
+                // Response.Write("login");
+                Session["username"] = TextBox1.Text;
+                Session["pass"] = TextBox2.Text;
+
+
+                Response.Redirect("onlineexam.aspx");
+            }
+        }
+        else
+        {
+            Response.Write("invalid username and password");
+        }
+
+
+    }
+}
+
