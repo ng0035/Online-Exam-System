@@ -1,0 +1,127 @@
+
+------------------------------ * home.aspx*---------------------------------------------------------------------------------------
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="home" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .auto-style3 {
+            width: 29%;
+            margin-left: 437px;
+            margin-right: 0px;
+            height: 153px;
+            margin-top: 0px;
+        }
+        .auto-style4 {
+            width: 388px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="MainContent">
+        <div id ="header">
+            <asp:Label ID="Label1" runat="server" Font-Names="Franklin Gothic Medium" Font-Size="XX-Large" ForeColor="#FFCCFF" Text="Online Examination System"></asp:Label>
+            </div>
+        <div id ="navigation">
+            <table class="auto-style2">
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="links" NavigateUrl="~/admin.aspx">Admin</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="links" NavigateUrl="~/login.aspx">Online Exam</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink3" runat="server" CssClass="links" NavigateUrl="~/resultaspx.aspx">Result</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink4" runat="server" CssClass="links" NavigateUrl="~/aboutus.aspx">About Us</asp:HyperLink>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        <div id ="content" class="auto-style1"><p id = "text">Online Examination System<br />
+            Online Examination System is an internet based questionnaire. Following these simple steps , one can give the examination sitting at home:</p>
+            <p><br />
+            <table class="auto-style3">
+                    <tr>
+                        <td class="auto-style4">
+                            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="links2" OnClick="LinkButton1_Click">Register</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style4">
+                            <asp:LinkButton ID="LinkButton2" runat="server" CssClass="links2" OnClick="LinkButton2_Click">Login</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style4">
+                            <asp:LinkButton ID="LinkButton3" runat="server" CssClass="links2" OnClick="LinkButton3_Click">Attempt the test</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style4">
+                            <asp:LinkButton ID="LinkButton4" runat="server" CssClass="links2" OnClick="LinkButton4_Click">Analyse your result</asp:LinkButton>
+                        </td>
+                    </tr>
+                </table>
+                </p>
+            &nbsp;
+            <p>
+                <br />
+    </p>
+
+                </div>
+        <div id ="footer">
+            <asp:Label ID="Label2" runat="server" Font-Names="Franklin Gothic Medium" Font-Size="XX-Large" ForeColor="Black" Text="Powered By Online Examination System"></asp:Label>
+            </div>
+
+
+
+
+        </asp:Content>
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------*home.aspx.cs*--------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class home : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("registration.aspx");
+    }
+
+    protected void LinkButton2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("login.aspx");
+    }
+
+    protected void LinkButton3_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("login.aspx");
+    }
+
+    protected void LinkButton4_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("resultaspx.aspx");
+    }
+}
+
