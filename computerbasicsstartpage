@@ -1,0 +1,83 @@
+---------------------------------------*cbstartpage.aspx*------------------------------------------------------------
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cbstartpage.aspx.cs" Inherits="cbstartpage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 182px;
+        }
+        .auto-style2 {
+            height: 400px;
+            margin-top: 158px;
+        }
+        .headings{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:larger;
+            color:#7D3C98;
+        }
+        .divstyle{
+            width: 661px;
+            height: 237px;
+            margin-left: 320px;
+            background-color:#F4D03F;
+            border:solid ;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="auto-style1" style="background-color: #003366">
+    
+        <asp:Image ID="Image1" runat="server" Height="150px" ImageAlign="Right" ImageUrl="~/images/computer.png" Width="547px" />
+    <div style ="background-color:#FAD7A0; " class="auto-style2"
+Hello ,
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Part 1:- Computer Basics Test" CssClass="headings"></asp:Label>
+        <br />
+        <br />
+        
+        &nbsp;<asp:Image ID="Image2" runat="server" Height="239px" ImageUrl="~/images/compclass.jpg" Width="429px" />
+&nbsp;
+      <br />
+        <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+                    
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------*cbstartpage.aspx.cs*--------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class cbstartpage : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label2.Text = Session["username"].ToString();
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("cbtest.aspx");
+    }
+}
