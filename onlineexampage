@@ -1,0 +1,135 @@
+----------------------------------------*onlineexam.aspx*----------------------------------------------
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="onlineexam.aspx.cs" Inherits="onlineexam" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href ="StyleSheet.css" type ="html/css" rel ="stylesheet" />
+    <style>
+        #head {
+            text-align: center;
+            background-color: #ABEBC6;
+            font-size: x-large;
+            font-weight: bold;
+            padding: 10px;
+            height: 100px;
+        }
+        #foot{
+             text-align: center;
+    background-color: #F5B041;
+    padding: 10px;
+    height: 100px;
+        }
+        #con{
+            background-color:#F7DC6F;
+            height:300px;
+            width:100%;
+        }
+        .auto-style2 {
+            width: 101%;
+            height: 323px;
+        }
+        td{
+
+         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size:medium;
+            color:#A93226;
+            
+        }
+        .auto-style3 {
+            width: 63%;
+            height: 183px;
+            margin-left: 180px;
+        }
+        .auto-style4 {
+            width: 576px;
+        }
+        .auto-style5 {
+            height: 98px;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <div id ="head">
+        <asp:Label ID="Label1" runat="server" Font-Names="Segoe Marker" Font-Size="XX-Large" ForeColor="Black" Text="List Of Online Tests"></asp:Label>
+        </div>
+    <div id="con" class="auto-style2">
+
+        &nbsp;&nbsp;
+        <br />
+ Hello ,<asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+            <tr>
+                <td class="link">Computer Basics</td>
+                <td>25 marks</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Programming Basics</td>
+                <td>25 marks</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Web Development</td>
+                <td>25 marks</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Database Management</td>
+                <td>25 marks</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Mixed bag</td>
+                <td>25 marks</td>
+            </tr>
+        </table>
+        <asp:Button ID="Button1" runat="server" Text="Start the test" OnClick="Button1_Click" />
+        <br />
+        <br />
+        <br />
+
+    </div>
+    <div id="foot">
+        <div class="auto-style5">
+            INSTRUCTIONS:<br />
+            <br />
+            Students have to attempt the test in the same order as mentioned above and all sections are to be attempted to clear the test.
+            <br />
+            ALL THE BEST!</div>
+        </div>    
+    </div>
+    </form>
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------------------------------------------
+------------------------------------*onlineexam.aspx.cs*------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class onlineexam : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label2.Text = Session["username"].ToString();
+    }
+
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("login.aspx");
+    }
+
+    protected void BulletedList1_Click(object sender, BulletedListEventArgs e)
+    {
+        
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("cbstartpage.aspx");
+    }
+}
