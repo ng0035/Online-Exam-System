@@ -1,0 +1,239 @@
+----------------------------------------*webdtest.aspx*--------------------------------------------
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="webdtest.aspx.cs" Inherits="webdtest" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        table{
+            color:aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:20px;
+            border-color:white;
+            border-width:2px;
+        }
+        .auto-style1 {
+            width: 100%;
+            height: 120px;
+            background-color:#1F618D;
+        }
+        .ques {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: larger;
+            color: #EAF2F8;
+        }
+         .auto-style3 {
+            width: 100%;
+            height: 494px;
+            margin-top: 0px;
+            background-color:#2874A6;
+        }
+          .auto-style30 {
+            width: 100%;
+            height: 176px;
+            background-color:#148F77;
+        }
+        .auto-style31 {
+            width: 100%;
+        }
+        .auto-style32 {
+            width: 740px;
+        }
+        .auto-style34 {
+            width: 179px;
+        }
+        .auto-style35 {
+            width: 80px;
+        }
+        .auto-style36 {
+            width: 82px;
+        }
+        .auto-style37 {
+            width: 547px;
+        }
+        .auto-style38 {
+            width: 192px;
+        }
+        .auto-style39 {
+            width: 174px;
+        }
+        .auto-style40 {
+            width: 177px;
+        }
+        .auto-style41 {
+            width: 189px;
+        }
+        .auto-style42 {
+            width: 190px;
+        }
+        .auto-style43 {
+            width: 498px;
+        }
+        .auto-style44 {
+            width: 211px;
+        }
+        .auto-style45 {
+            width: 208px;
+        }
+        .auto-style46 {
+            width: 209px;
+        }
+        .auto-style47 {
+            width: 494px;
+        }
+        .auto-style48 {
+            width: 197px;
+        }
+        .auto-style49 {
+            width: 215px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="auto-style1">
+     <br />
+        <asp:Label ID="Label1" runat="server" CssClass="ques" Text="Web Development Examination"></asp:Label>
+    
+    </div>
+        <div class =" auto-style3">
+            <br />
+            <table class="auto-style31">
+                <tr>
+                    <td class="auto-style32">Q1.Which one of the following is not used to generate dynamic web pages?</td>
+                    <td class="auto-style36">
+                        <asp:RadioButton ID="RadioButton1" runat="server" GroupName="a" Text="php" />
+                    </td>
+                    <td class="auto-style34">
+                        <asp:RadioButton ID="RadioButton2" runat="server" GroupName="a" Text="asp.net" />
+                    </td>
+                    <td class="auto-style35">
+                        <asp:RadioButton ID="RadioButton3" runat="server" GroupName="a" Text="jsp" />
+                    </td>
+                    <td>
+                        <asp:RadioButton ID="RadioButton4" runat="server" GroupName="a" Text="none of the above" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="auto-style31">
+                <tr>
+                    <td class="auto-style37">Q2. An alternative of javascript on windows.</td>
+                    <td class="auto-style38">
+                        <asp:RadioButton ID="RadioButton5" runat="server" GroupName="b" Text="VBScript" />
+                    </td>
+                    <td class="auto-style39">
+                        <asp:RadioButton ID="RadioButton6" runat="server" GroupName="b" Text="ASP.NET" />
+                    </td>
+                    <td class="auto-style40">
+                        <asp:RadioButton ID="RadioButton7" runat="server" GroupName="b" Text="jsp" />
+                    </td>
+                    <td>
+                        <asp:RadioButton ID="RadioButton8" runat="server" GroupName="b" Text="none of the above" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="auto-style31">
+                <tr>
+                    <td class="auto-style37">Q3. Which is not a property of the &lt;marquee&gt; tag?</td>
+                    <td class="auto-style41">
+                        <asp:RadioButton ID="RadioButton9" runat="server" GroupName="c" Text="alternate" />
+                    </td>
+                    <td class="auto-style42">
+                        <asp:RadioButton ID="RadioButton10" runat="server" GroupName="c" Text="blur" />
+                    </td>
+                    <td class="auto-style42">
+                        <asp:RadioButton ID="RadioButton11" runat="server" GroupName="c" Text="scroll" />
+                    </td>
+                    <td>
+                        <asp:RadioButton ID="RadioButton12" runat="server" GroupName="c" Text="slide" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="auto-style31">
+                <tr>
+                    <td class="auto-style43">Q4. colspan = n can be added to only which tag?</td>
+                    <td class="auto-style44">
+                        <asp:RadioButton ID="RadioButton13" runat="server" GroupName="d" Text="table" />
+                    </td>
+                    <td class="auto-style45">
+                        <asp:RadioButton ID="RadioButton14" runat="server" GroupName="d" Text="td" />
+                    </td>
+                    <td class="auto-style46">
+                        <asp:RadioButton ID="RadioButton15" runat="server" GroupName="d" Text="tr" />
+                    </td>
+                    <td>
+                        <asp:RadioButton ID="RadioButton16" runat="server" GroupName="d" Text="none of the above" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <table class="auto-style31">
+                <tr>
+                    <td class="auto-style47">Q5.By default what is the Fps shown on timeline?</td>
+                    <td class="auto-style48">
+                        <asp:RadioButton ID="RadioButton17" runat="server" GroupName="e" Text="15" />
+                    </td>
+                    <td class="auto-style49">
+                        <asp:RadioButton ID="RadioButton18" runat="server" GroupName="e" Text="1" />
+                    </td>
+                    <td class="auto-style45">
+                        <asp:RadioButton ID="RadioButton19" runat="server" GroupName="e" Text="20" />
+                    </td>
+                    <td>
+                        <asp:RadioButton ID="RadioButton20" runat="server" GroupName="e" Text="25" />
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
+        </div>
+        <div class =" auto-style30"></div>
+    </form>
+</body>
+</html>
+--------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------*webdtest.aspx.cs*-----------------------
+
+public partial class webdtest : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    int ob;
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string s;
+        s = Request.QueryString["value"];
+        ob = Convert.ToInt32(s);
+        
+
+
+        if (RadioButton4.Checked == true)
+        {
+            ob += 5;
+        }
+        if (RadioButton5.Checked == true)
+        {
+            ob += 5;
+        }
+        if (RadioButton10.Checked == true)
+        {
+            ob += 5;
+        }
+        if (RadioButton14.Checked == true)
+        {
+            ob += 5;
+        }
+        if (RadioButton17.Checked == true)
+        {
+            ob += 5;
+      }
+      Response.Redirect("dbstartpage.aspx?value="+ob);
+    }
+}
