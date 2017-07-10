@@ -1,0 +1,277 @@
+--------------------------------------------------*cbtest.aspx*--------------------------------------------------
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="cbtest.aspx.cs" Inherits="cbtest" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            height: 120px;
+            background-color:#1F618D;
+        }
+        .auto-style3 {
+            width: 100%;
+            height: 494px;
+            margin-top: 0px;
+        }
+        .ques{
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size:larger;
+            color:#EAF2F8;
+            
+        }
+        .head{
+            
+            color:aliceblue;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:20px;
+        }
+        .auto-style4 {
+            width: 100%;
+        }
+        .auto-style5 {
+            width: 600px;
+        }
+        .auto-style6 {
+            width: 189px;
+        }
+        .auto-style8 {
+            width: 175px;
+        }
+        .auto-style9 {
+            width: 174px;
+        }
+        .auto-style10 {
+            width: 192px;
+        }
+        .auto-style14 {
+            width: 209px;
+        }
+        .auto-style15 {
+            width: 227px;
+        }
+        .auto-style16 {
+            width: 528px;
+            height: 106px;
+        }
+        .auto-style17 {
+            width: 136px;
+            height: 106px;
+        }
+        .auto-style19 {
+            height: 106px;
+        }
+        .auto-style20 {
+            width: 259px;
+            height: 106px;
+        }
+        .auto-style21 {
+            width: 238px;
+            height: 106px;
+        }
+        .auto-style22 {
+            width: 526px;
+        }
+        .auto-style23 {
+            width: 188px;
+        }
+        .auto-style24 {
+            width: 198px;
+        }
+        .auto-style26 {
+            width: 193px;
+        }
+        .auto-style27 {
+            width: 197px;
+        }
+        .auto-style28 {
+            width: 176px;
+        }
+        .auto-style29 {
+            width: 517px;
+        }
+        .auto-style30 {
+            width: 100%;
+            height: 176px;
+        }
+        .auto-style31 {
+            width: 515px;
+        }
+    </style>
+    <script type ="text/javascript">
+        function checkradiobuttons() {
+
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="auto-style1">
+    
+        <br />
+        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label1" runat="server" Text="Computer Basics Examination" CssClass="ques"></asp:Label>
+    
+    </div>
+    <div style ="background-color:#2874A6; " class="auto-style3">
+        <br />
+        <br />
+        <table class="auto-style4" border="1">
+            <tr>
+                <td class="auto-style5">Q1.How many color dots make up one color pixel on screen?</td>
+                <td class="auto-style6">
+                    <asp:RadioButton ID="RadioButton1" runat="server" Text="256" GroupName="a" CssClass="head" />
+                </td>
+                <td class="auto-style9">
+                    <asp:RadioButton ID="RadioButton2" runat="server" Text="16" GroupName="a" CssClass="head" />
+                </td>
+                <td class="auto-style8">
+                    <asp:RadioButton ID="RadioButton3" runat="server" Text="3" GroupName="a" CssClass="head" />
+                </td>
+                <td>
+                    <asp:RadioButton ID="RadioButton4" runat="server" Text="1" GroupName="a" CssClass="head" ValidationGroup="a" />
+                &nbsp;</td>
+            </tr>
+        </table>
+        <br />
+        
+   
+        <table class="auto-style4" border="1">
+            <tr>
+                <td class="auto-style29">Q2.Data in diskettes is stored in which form?</td>
+                <td class="auto-style10">
+                    <asp:RadioButton ID="RadioButton5" runat="server" Text="ink" GroupName="b" CssClass="head" />
+                </td>
+                <td class="auto-style14">
+                    <asp:RadioButton ID="RadioButton6" runat="server" Text="laser bubbles" GroupName="b" CssClass="head" />
+                </td>
+                <td class="auto-style15">
+                    <asp:RadioButton ID="RadioButton7" runat="server" Text="magnetism" GroupName="b" CssClass="head" />
+                </td>
+                <td>
+                    <asp:RadioButton ID="RadioButton8" runat="server" Text="circuits" GroupName="b" CssClass="head" />
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        
+   
+        <table class="auto-style4" border="1">
+            <tr>
+                <td class="auto-style16">Q3.What is the commonly used unit for measuring the speed of data transmission?</td>
+                <td class="auto-style17">
+                    <asp:RadioButton ID="RadioButton9" runat="server" Text="Bits/sec" GroupName="c" CssClass="head" />
+                </td>
+                <td class="auto-style21">
+                    <asp:RadioButton ID="RadioButton10" runat="server" Text="Nano secs" GroupName="c" CssClass="head" />
+                </td>
+                <td class="auto-style20">
+                    <asp:RadioButton ID="RadioButton11" runat="server" Text="characters/sec" GroupName="c" CssClass="head" />
+                </td>
+                <td class="auto-style19">
+                    <asp:RadioButton ID="RadioButton12" runat="server" Text="MHz" GroupName="c" CssClass="head" />
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        
+   
+        <table class="auto-style4" border="1">
+            <tr>
+                <td class="auto-style22">Q4.Which one of the following is not included in basic functions of an operating system?</td>
+                <td class="auto-style10">
+                    <asp:RadioButton ID="RadioButton13" runat="server" Text="Job Control" GroupName="d" CssClass="head" />
+                </td>
+                <td class="auto-style23">
+                    <asp:RadioButton ID="RadioButton14" runat="server" Text="Job Scheduling" GroupName="d" CssClass="head" />
+                </td>
+                <td class="auto-style24">
+                    <asp:RadioButton ID="RadioButton15" runat="server" Text="Memory Mgmt" GroupName="d" CssClass="head" />
+                </td>
+                <td>
+                    <asp:RadioButton ID="RadioButton16" runat="server" Text="Data Mgmt" GroupName="d" CssClass="head" />
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table class="auto-style4" border="1">
+            <tr>
+                <td class="auto-style31">Q5.... are attempts by indivisuals to obtain confidential information from you by falsifying their identity.</td>
+                <td class="auto-style26">
+                    <asp:RadioButton ID="RadioButton17" runat="server" GroupName="e" Text="Phising trips" CssClass="head" />
+                </td>
+                <td class="auto-style27">
+                    <asp:RadioButton ID="RadioButton18" runat="server" GroupName="e" Text="Computer Viruses" CssClass="head" />
+                </td>
+                <td class="auto-style28">
+                    <asp:RadioButton ID="RadioButton19" runat="server" GroupName="e" Text="Spyware scams" CssClass="head" />
+                </td>
+                <td>
+                    <asp:RadioButton ID="RadioButton20" runat="server" GroupName="e" Text="Phising Scams" CssClass="head" />
+                </td>
+            </tr>
+        </table>
+        <br />
+
+        
+   
+    </div>
+    <div style ="background-color:#148F77; " class="auto-style30">
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" OnClientClick="checkradiobuttons()" />
+        <br />
+        <br />
+        </div>
+    </form>
+    </body>
+</html>
+-------------------------------------------------------------------------------------
+------------------------------------cbtest.aspx.cs------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class cbtest : System.Web.UI.Page
+{ 
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+    }
+    int ob = 0;
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        if (RadioButton3.Checked == true)
+        {
+            ob+=5;
+        }
+        if (RadioButton7.Checked == true)
+        {
+            ob += 5;
+        }
+        if(RadioButton9.Checked == true)
+        {
+            ob += 5;
+        }
+        if(RadioButton13.Checked == true)
+        {
+            ob += 5;
+        }
+        if(RadioButton17.Checked == true)
+        {
+            ob += 5;
+        }
+        
+        Response.Write("your score is "+ob);
+        Response.Redirect("pcstartpage.aspx?value="+ob);
+    }
+}
