@@ -1,0 +1,84 @@
+--------------------------------*pcstartpage.aspx*---------------------------------------------------------
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="pcstartpage.aspx.cs" Inherits="pcstartpage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style2 {
+            height: 182px;
+            width: 1350px;
+        }
+        .headings{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:larger;
+            color:#7D3C98;
+        }
+        .auto-style3 {
+            height: 660px;
+            background-color:#FAD7A0;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <div style="background-color:#003366; " class="auto-style2";
+        <br />
+        <asp:Image ID="Image2" runat="server" Height="124px" ImageAlign="Right" ImageUrl="~/images/programming.jpg" Width="425px" />
+        <br />
+        </div>
+    
+    </div>
+    <div class="auto-style3">
+        <br />
+Hello,
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label1" runat="server" CssClass="headings" Text="Part 2:- Programming Basics"></asp:Label>
+        <br />
+        <br />
+        <br />
+        <asp:Image ID="Image3" runat="server" Height="307px" ImageUrl="~/images/programmer.png" Width="432px" />
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" CssClass="headings" OnClick="Button1_Click" Text="Start" />
+        </div>
+    </form>
+    </body>
+</html>
+----------------------------------------------------------------------------------------------------------------------------------
+--------------------------*pcstartpage.aspx.cs*-----------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class pcstartpage : System.Web.UI.Page
+{
+    int ob;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+        Label2.Text = Session["username"].ToString();
+
+        string s;
+        s = Request.QueryString["value"];
+        ob = Convert.ToInt32(s);
+       // Response.Write("value is" + ob);
+
+
+    }
+   
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+
+        Response.Redirect("pctest.aspx?value=" + ob);
+        
+    }
+}
