@@ -1,0 +1,176 @@
+---------------------------*pctest.aspx*----------------------------------------------------------------------------
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="pctest.aspx.cs" Inherits="pctest" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        .auto-style1 {
+            width: 100%;
+            height: 120px;
+            background-color:#8E44AD  ;
+        }
+        .auto-style2 {
+            width: 1343px;
+            height: 533px;
+            background-color:#884EA0  ;
+        }
+        .auto-style3 {
+            width: 1339px;
+            height: 95px;
+            background-color:#F7DC6F;
+        }
+        .ques {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: larger;
+            color: #EAF2F8;
+            text-align:center;
+        }
+
+        .auto-style4 {
+            width: 90%;
+            height: 336px;
+        }
+        .auto-style5 {
+            width: 847px;
+        }
+        .auto-style6 {
+            width: 245px;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <div class ="auto-style1 ">
+    <p class ="ques">&nbsp;</p>
+        <p class ="ques">Programming Basics Examination</p>
+    </div> 
+    <div class="auto-style2">
+        <br />
+        <table class="auto-style4">
+            <tr>
+                <td class="auto-style5">Q1.&nbsp;&nbsp; Which of the following mechanisms are provided by Object Oriented Language to implement Object Oriented Model?</td>
+                <td class="auto-style6">
+                    <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="290px">
+                        <asp:ListItem>select ans</asp:ListItem>
+                        <asp:ListItem>Encapsulation</asp:ListItem>
+                        <asp:ListItem>Inheritance</asp:ListItem>
+                        <asp:ListItem>Polymorphism</asp:ListItem>
+                        <asp:ListItem>All of the above</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style5">Q2.&nbsp; Abstraction is classified into .... types.</td>
+                <td class="auto-style6">
+                    <asp:DropDownList ID="DropDownList2" runat="server" Height="23px" Width="289px">
+                        <asp:ListItem>selected ans</asp:ListItem>
+                        <asp:ListItem>4</asp:ListItem>
+                        <asp:ListItem>3</asp:ListItem>
+                        <asp:ListItem>2</asp:ListItem>
+                        <asp:ListItem>1</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style5">Q3.&nbsp; Runtime polymorphism is executed through:</td>
+                <td class="auto-style6">
+                    <asp:DropDownList ID="DropDownList3" runat="server" Width="288px">
+                        <asp:ListItem>select ans</asp:ListItem>
+                        <asp:ListItem>friend function</asp:ListItem>
+                        <asp:ListItem>virtual function</asp:ListItem>
+                        <asp:ListItem>operator overloading</asp:ListItem>
+                        <asp:ListItem>function overloading</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style5">Q4.&nbsp; When the compiler cannot differentiate between two overloaded constructors, they are called</td>
+                <td class="auto-style6">
+                    <asp:DropDownList ID="DropDownList4" runat="server" Width="287px">
+                        <asp:ListItem>selected ans</asp:ListItem>
+                        <asp:ListItem>overloaded</asp:ListItem>
+                        <asp:ListItem>destructed</asp:ListItem>
+                        <asp:ListItem>ambigious</asp:ListItem>
+                        <asp:ListItem>dubious</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style5">Q5.&nbsp; Which of the following operators can not be overloaded using friend functions?</td>
+                <td class="auto-style6">
+                    <asp:DropDownList ID="DropDownList5" runat="server" Width="287px">
+                        <asp:ListItem>select ans</asp:ListItem>
+                        <asp:ListItem>-&gt;</asp:ListItem>
+                        <asp:ListItem>=</asp:ListItem>
+                        <asp:ListItem>()</asp:ListItem>
+                        <asp:ListItem>*</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+        <br />
+        <br />
+        </div>
+    <div class="auto-style3"></div>
+    </div>
+    </form>
+</body>
+</html>
+---------------------------------------------------------------------------------------------------------
+------------------------------*pctest.aspx.cs*-------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class pctest : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+    int ob;
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        string s;
+        s = Request.QueryString["value"];
+        ob = Convert.ToInt32(s);
+
+
+
+
+        if (DropDownList1.SelectedValue == "All of the above")
+        {
+            ob += 5;
+        }
+        if (DropDownList2.SelectedValue == "4")
+        {
+            ob += 5;
+        }
+        if (DropDownList3.SelectedValue == "operator overloading")
+        {
+            ob += 5;
+        }
+        if (DropDownList4.SelectedValue == "ambigious")
+        {
+            ob += 5;
+        }
+        if (DropDownList5.SelectedValue == "*")
+        {
+            ob += 5;
+        }
+        Response.Redirect("webdstartpage.aspx?value=" + ob);
+    }
+}
