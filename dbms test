@@ -1,0 +1,174 @@
+-------------------------------------------*dbtest.aspx*--------------------------------
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="dbtest.aspx.cs" Inherits="dbtest" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        .auto-style1 {
+            width: 100%;
+            height: 120px;
+            background-color:#8E44AD  ;
+        }
+         .ques {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: larger;
+            color: #EAF2F8;
+            text-align:center;
+        }
+         .auto-style2 {
+            width: 1343px;
+            height: 533px;
+            background-color:#884EA0  ;
+        }
+        .auto-style3 {
+            width: 100%;
+        }
+        .auto-style4 {
+            height: 31px;
+        }
+        .auto-style5 {
+            width: 951px;
+        }
+        .auto-style6 {
+            height: 31px;
+            width: 951px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+     <div class ="auto-style1 ">
+        <p class ="ques">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+         <p class ="ques">Database Management System</p>
+        
+         </div>
+        <div class ="auto-style2">
+            <br />
+            <br />
+            <table class="auto-style3">
+                <tr>
+                    <td class="auto-style5">Q1.Values of one data type can be converted to another domain using</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList1" runat="server" Width="178px">
+                            <asp:ListItem>select</asp:ListItem>
+                            <asp:ListItem>cast</asp:ListItem>
+                            <asp:ListItem>drop type</asp:ListItem>
+                            <asp:ListItem>alter </asp:ListItem>
+                            <asp:ListItem>convert</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">Q2.Which join condition contains an equality operator?</td>
+                    <td class="auto-style4">
+                        <asp:DropDownList ID="DropDownList2" runat="server" Width="178px">
+                            <asp:ListItem>select</asp:ListItem>
+                            <asp:ListItem>equijoins</asp:ListItem>
+                            <asp:ListItem>cartesian</asp:ListItem>
+                            <asp:ListItem>natural</asp:ListItem>
+                            <asp:ListItem>left</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">Q3.the total participation of entities in ER diagram is represented by</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList3" runat="server" Width="174px">
+                            <asp:ListItem>select</asp:ListItem>
+                            <asp:ListItem>dashed line</asp:ListItem>
+                            <asp:ListItem>double line</asp:ListItem>
+                            <asp:ListItem>double rectangle</asp:ListItem>
+                            <asp:ListItem>circle</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">Q4.which of the following is used as a symbol for &quot;except&quot;</td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList4" runat="server" Width="175px">
+                            <asp:ListItem>select</asp:ListItem>
+                            <asp:ListItem>^</asp:ListItem>
+                            <asp:ListItem>v</asp:ListItem>
+                            <asp:ListItem>¬</asp:ListItem>
+                            <asp:ListItem>~</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5">Q5.Which of the following is the oldest database model? </td>
+                    <td>
+                        <asp:DropDownList ID="DropDownList5" runat="server" Width="175px">
+                            <asp:ListItem>select</asp:ListItem>
+                            <asp:ListItem>relational</asp:ListItem>
+                            <asp:ListItem>deductive</asp:ListItem>
+                            <asp:ListItem>physical</asp:ListItem>
+                            <asp:ListItem>network</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" />
+        </div>
+    </div> 
+  
+    </form>
+</body>
+</html>
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------*dbtest.aspx.cs*--------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class dbtest : System.Web.UI.Page
+{
+    int ob;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string s;
+        s = Request.QueryString["value"];
+        ob = Convert.ToInt32(s);
+
+
+    }
+    
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        
+
+
+
+        if (DropDownList1.SelectedValue == "cast")
+        {
+            ob += 5;
+        }
+        if (DropDownList2.SelectedValue == "equijoins")
+        {
+            ob += 5;
+        }
+        if (DropDownList3.SelectedValue == "double line")
+        {
+            ob += 5;
+        }
+        if (DropDownList4.SelectedValue == "¬")
+        {
+            ob += 5;
+        }
+        if (DropDownList5.SelectedValue == "network")
+        {
+            ob += 5;
+        }
+        Response.Redirect("mbstartpageaspx.aspx?value=" + ob);  
+    }
+}
