@@ -1,0 +1,233 @@
+-----------------------*registration.aspx*-------------------------------------------------------------------
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage2.master" AutoEventWireup="true" CodeFile="registration.aspx.cs" Inherits="registration" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+    .auto-style4 {
+        width: 100%;
+        height: 136px;
+        margin-top: 0px;
+    }
+    .auto-style5 {
+        width: 100%;
+        height: 546px;
+    }
+    .auto-style6 {
+        width: 97%;
+        height: 289px;
+    }
+    .auto-style7 {
+        height: 356px;
+        width: 100%;
+    }
+    .auto-style8 {
+        width: 67%;
+        height: 318px;
+        margin-left: 421px;
+    }
+    .auto-style9 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: small;
+            color: lavenderblush;
+            width: 413px;
+        }
+    .auto-style10 {
+        width: 758px;
+    }
+    .auto-style11 {
+        margin-left: 0px;
+    }
+        .auto-style12 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: small;
+            color: lavenderblush;
+            width: 413px;
+            height: 32px;
+        }
+        .auto-style13 {
+            width: 758px;
+            height: 32px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder1">
+        <div style ="background-color:blueviolet; width:100%; height:200px ">
+            <br />
+            <br />
+        
+            <br />
+            <asp:Label ID="Label1" runat="server" Font-Names="Franklin Gothic Medium" Font-Size="XX-Large" ForeColor="#FFCCFF" Text="Online Examination System"></asp:Label>
+    </div>
+    <div style ="background-color:coral; " class="auto-style5">
+       <div id ="navigation" class="auto-style7">
+            <table class="auto-style6">
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink1" runat="server" CssClass="links" NavigateUrl="~/admin.aspx">Admin</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink2" runat="server" CssClass="links" NavigateUrl="~/login.aspx">Online Exam</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink3" runat="server" CssClass="links" NavigateUrl="~/resultaspx.aspx">Result</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:HyperLink ID="HyperLink4" runat="server" CssClass="links" NavigateUrl="~/aboutus.aspx">About Us</asp:HyperLink>
+                    </td>
+                </tr>
+            </table>
+            </div>
+
+        <asp:Label ID="Label2" runat="server" CssClass="links" Text="Registration Page"></asp:Label>
+        <br />
+        <table class="auto-style8">
+            <tr>
+                <td class="auto-style9">Name</td>
+                <td class="auto-style10">
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Enter name" CssClass="valid"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style9">Username</td>
+                <td class="auto-style10">
+                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+             
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" CssClass="valid" ErrorMessage="Enter user name"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style9">Password</td>
+                <td class="auto-style10">
+                    <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style11" TextMode="Password"></asp:TextBox>
+               
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox3" CssClass="valid" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style9">Confirm Password</td>
+                <td class="auto-style10">
+                    <asp:TextBox ID="TextBox4" runat="server" TextMode="Password"></asp:TextBox>
+        
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="TextBox3" ControlToValidate="TextBox4" CssClass="valid" ErrorMessage="the passwords don't match"></asp:CompareValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style9">E-mail id</td>
+                <td class="auto-style10">
+                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+               
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox5" CssClass="valid" ErrorMessage="Enter proper e-mail format" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style12">Mobile No.</td>
+                <td class="auto-style13">
+                    <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+            
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox6" CssClass="valid" ErrorMessage="Enter 10 digit mobile no." ValidationExpression="[0-9]{10}"></asp:RegularExpressionValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style9">Gender</td>
+                <td class="auto-style10">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="RadioButtonList1" CssClass="valid" ErrorMessage="Required"></asp:RequiredFieldValidator>
+&nbsp;<asp:RadioButtonList ID="RadioButtonList1" runat="server" CellPadding="0" CellSpacing="0" CssClass="reg" OnSelectedIndexChanged="RadioButtonList1_SelectedIndexChanged1" RepeatDirection="Horizontal" Width="187px" Height="10px">
+                        <asp:ListItem>female</asp:ListItem>
+                        <asp:ListItem>male</asp:ListItem>
+                    </asp:RadioButtonList>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style9">State</td>
+                <td class="auto-style10">
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+                        <asp:ListItem>select</asp:ListItem>
+                        <asp:ListItem>Delhi</asp:ListItem>
+                        <asp:ListItem>Mumbai</asp:ListItem>
+                        <asp:ListItem>Punjab</asp:ListItem>
+                        <asp:ListItem>Goa</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="DropDownList1" CssClass="valid" ErrorMessage="compulsory" ValidateRequestMode="Enabled"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+        </table>
+        <br />
+            <asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn" OnClick="Button1_Click" />
+     
+        </div>
+        <div style ="background-color:greenyellow;" class="auto-style4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <br />
+            <asp:LinkButton ID="LinkButton1" runat="server" ForeColor="Black">Click here for any queries</asp:LinkButton>
+            <br />
+            <br />
+            <br />
+            </div>
+        </asp:Content>
+-----------------------------------------------------------------------------------------------------------------------------------
+----------------------------------*registration.aspx.cs*---------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+public partial class registration : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void RadioButtonList1_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-A4DEU4N\SQLEXPRESS;Initial Catalog=project;Integrated Security=True");
+        SqlCommand cmd = new SqlCommand("insert into reg(name,username,pass,email,contact,gender,state)values(@name,@username,@pass,@email,@contact,@gender,@state)", con);
+
+        cmd.Parameters.AddWithValue("@name", TextBox1.Text);
+        cmd.Parameters.AddWithValue("@username", TextBox2.Text);
+        cmd.Parameters.AddWithValue("@pass", TextBox3.Text);
+        cmd.Parameters.AddWithValue("@email", TextBox5.Text);
+        cmd.Parameters.AddWithValue("@contact",Convert.ToDouble(TextBox6.Text));
+        cmd.Parameters.AddWithValue("@gender", RadioButtonList1.SelectedItem.ToString());
+        cmd.Parameters.AddWithValue("@state", DropDownList1.SelectedItem.ToString());
+
+        con.Open();
+        int a = cmd.ExecuteNonQuery();
+        if (a > 0)
+        {
+            Response.Write("submit");
+            Response.Redirect("login.aspx");
+        }
+        else
+        {
+            Response.Write("not submit");
+        }
+        con.Close();
+
+
+        
+    }
+
+    
+}
