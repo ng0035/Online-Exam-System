@@ -1,0 +1,78 @@
+--------------------------------------------------*dbstartpage.aspx*-----------------------------------
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="dbstartpage.aspx.cs" Inherits="dbstartpage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        .auto-style2 {
+            height: 182px;
+            width: 100%;
+            background-color:#003366;
+        }
+        .auto-style3 {
+            height: 660px;
+            background-color: #FAD7A0;
+            margin-top:0px;
+        }
+        .headings{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:larger;
+            color:#7D3C98;
+        }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    <div class ="auto-style2";
+        <br />
+        <asp:Image ID="Image1" runat="server" Height="110px" ImageAlign="Right" ImageUrl="~/images/db.jpg" Width="334px" />
+        </div>
+    <div class ="auto-style3">
+        <br />
+        <asp:Label ID="Label1" runat="server" CssClass="headings" Text="Part 4:- Database Management"></asp:Label>
+        <br />
+        &nbsp;Hello,
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        <br />
+        <asp:Image ID="Image2" runat="server" Height="243px" ImageUrl="~/images/db2.png" Width="441px" />
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Start" />
+        </div>
+    
+    </div>
+
+    </form>
+    <p>
+        &nbsp;</p>
+</body>
+</html>
+------------------------------------------------------------------------------------------------------------------------------
+------------------------------*dbstartpage.aspx.cs*---------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class dbstartpage : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Label2.Text = Session["username"].ToString();
+        string s;
+        s = Request.QueryString["value"];
+        ob = Convert.ToInt32(s);
+        //Response.Write("the value is " + ob);
+    }
+    int ob;
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("dbtest.aspx?value="+ob);
+    }
+}
